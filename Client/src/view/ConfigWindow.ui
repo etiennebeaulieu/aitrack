@@ -3,26 +3,26 @@
  <class>ConfigWindow</class>
  <widget class="QWidget" name="ConfigWindow">
   <property name="windowModality">
-   <enum>Qt::WindowModal</enum>
+   <enum>Qt::WindowModality::WindowModal</enum>
   </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>411</width>
-    <height>401</height>
+    <height>430</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>411</width>
-    <height>401</height>
+    <height>430</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>411</width>
-    <height>401</height>
+    <height>430</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -166,7 +166,7 @@
       <number>64</number>
      </property>
      <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+      <enum>Qt::Orientation::Horizontal</enum>
      </property>
      <property name="invertedAppearance">
       <bool>false</bool>
@@ -175,7 +175,7 @@
       <bool>false</bool>
      </property>
      <property name="tickPosition">
-      <enum>QSlider::TicksAbove</enum>
+      <enum>QSlider::TickPosition::TicksAbove</enum>
      </property>
     </widget>
     <widget class="QLabel" name="label_6">
@@ -220,10 +220,10 @@
       <number>144</number>
      </property>
      <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+      <enum>Qt::Orientation::Horizontal</enum>
      </property>
      <property name="tickPosition">
-      <enum>QSlider::TicksAbove</enum>
+      <enum>QSlider::TickPosition::TicksAbove</enum>
      </property>
     </widget>
    </widget>
@@ -234,7 +234,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>360</y>
+     <y>390</y>
      <width>381</width>
      <height>31</height>
     </rect>
@@ -283,7 +283,7 @@
      <string>asadf</string>
     </property>
     <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
+     <enum>Qt::LayoutDirection::LeftToRight</enum>
     </property>
     <property name="text">
      <string>192.168.1.10</string>
@@ -325,7 +325,7 @@
      </rect>
     </property>
     <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
+     <enum>Qt::LayoutDirection::LeftToRight</enum>
     </property>
     <property name="text">
      <string>4242</string>
@@ -464,7 +464,7 @@
      <x>210</x>
      <y>280</y>
      <width>191</width>
-     <height>71</height>
+     <height>101</height>
     </rect>
    </property>
    <property name="title">
@@ -491,6 +491,13 @@
      <widget class="QCheckBox" name="enableTrackingCheckbox">
       <property name="text">
        <string>Start/Stop Tracking shortcut</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="enableAutoStartCheckbox">
+      <property name="text">
+       <string>Auto start tracking</string>
       </property>
      </widget>
     </item>

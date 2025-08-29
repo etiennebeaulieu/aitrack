@@ -20,6 +20,7 @@ struct ConfigData
 	bool use_landmark_stab;
 	bool autocheck_updates;
 	bool tracking_shortcut_enabled;
+	bool auto_start_enabled;
 
 	float x, y, z, yaw, pitch, roll;
 

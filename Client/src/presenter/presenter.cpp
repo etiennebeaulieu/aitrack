@@ -92,8 +92,10 @@ Presenter::Presenter(IView& view, std::unique_ptr<TrackerFactory>&& t_factory, s
 	if (state.autocheck_updates)
 	{
 		logger->info("Checking for updates");
-		update_chkr = std::make_unique<UpdateChecker>(std::string(AITRACK_VERSION), (IUpdateSub*)this);
-		update_chkr->get_latest_update(std::string("AIRLegend/aitrack"));
+		std::string version_string(AITRACK_VERSION);
+		update_chkr = std::make_unique<UpdateChecker>(version_string, (IUpdateSub*)this);
+		std::string repo_string("AIRLegend/aitrack");
+		update_chkr->get_latest_update(repo_string);
 	}
 
 	sync_ui_inputs();
@@ -292,7 +294,8 @@ CameraSettings Presenter::build_camera_params()
 void Presenter::update_camera_params()
 {
 	this->logger->info("Updating camera parameters...");
-	all_cameras[state.selected_camera]->set_settings(build_camera_params());
+	CameraSettings new_settings = build_camera_params();
+	all_cameras[state.selected_camera]->set_settings(new_settings);
 
 	// The camera can be using its default resolution so we must sync our state
 	// to it. If we are using our custom resolution that wont be necessary.
@@ -350,6 +353,7 @@ void Presenter::save_prefs(const ConfigData& data)
 	state.video_height = data.video_height;
 	state.video_width = data.video_width;
 	state.autocheck_updates = data.autocheck_updates;
+	state.auto_start_enabled = data.auto_start_enabled;
 	state.tracking_shortcut_enabled = data.tracking_shortcut_enabled;
 
 	update_camera_params();

@@ -22,7 +22,7 @@ class WindowMain : public QMainWindow,  public IRootView, public IView
 	Q_OBJECT
 
 public:
-	WindowMain(QWidget *parent = 0);
+	WindowMain(bool auto_start = false, QWidget *parent = 0);
 	~WindowMain();
 	IPresenter *presenter;
 	void closeEvent(QCloseEvent* event) override;

@@ -31,6 +31,7 @@ ConfigWindow::ConfigWindow(IRootView *prev_window, QWidget *parent)
 	check_auto_update = findChild<QCheckBox*>("updateChckbox");
 	check_stabilization_landmarks = gp_box_priors->findChild<QCheckBox*>("landmarkStabChck");
 	check_enable_tracking_shortcut = findChild<QCheckBox*>("enableTrackingCheckbox");
+	check_enable_auto_start = findChild<QCheckBox*>("enableAutoStartCheckbox");
 	cb_modelType = gp_box_priors->findChild<QComboBox*>("modeltypeSelect");
 	distance_param = gp_box_priors->findChild<QLineEdit*>("distanceField");
 	fov_param = gp_box_priors->findChild<QLineEdit*>("fovField");
@@ -93,6 +94,7 @@ ConfigData ConfigWindow::get_inputs()
 	conf.selected_model = cb_modelType->currentIndex();
 	conf.autocheck_updates = check_auto_update->isChecked();
 	conf.tracking_shortcut_enabled = check_enable_tracking_shortcut->isChecked();
+	conf.auto_start_enabled = check_enable_auto_start->isChecked();
 
 	if (conf.ip.length() == 0)
 		conf.ip = std::string("127.0.0.1"); /* default to loopback IPv4 on same computer */
@@ -130,6 +132,7 @@ void ConfigWindow::update_view_state(ConfigData conf)
 
 	check_auto_update->setChecked(conf.autocheck_updates);
 	check_enable_tracking_shortcut->setChecked(conf.tracking_shortcut_enabled);
+	check_enable_auto_start->setChecked(conf.auto_start_enabled);
 	check_stabilization_landmarks->setChecked(conf.use_landmark_stab);
 	distance_param->setText(QString::number(conf.prior_distance));
 	fov_param->setText(QString::number(conf.camera_fov));

@@ -57,14 +57,35 @@ int main(int argc, char *argv[])
     }
 
     QApplication app(argc, argv);
+    if (state.auto_start_enabled) {
+        WindowMain w(true);
+        w.show();
 
-    WindowMain w;
-    w.show();
+        auto t_factory = std::make_unique<TrackerFactory>("./models/");
 
-    auto t_factory = std::make_unique<TrackerFactory>("./models/");
+        Presenter p((IView&)w, std::move(t_factory), std::move(conf_mgr));
+        logger->info("App initialized");
 
-    Presenter p((IView&)w, std::move(t_factory), std::move(conf_mgr));
-    logger->info("App initialized");
+        return app.exec();
+    }
+    else {
+        WindowMain w(false);
+        w.show();
 
-    return app.exec();
+        auto t_factory = std::make_unique<TrackerFactory>("./models/");
+
+        Presenter p((IView&)w, std::move(t_factory), std::move(conf_mgr));
+        logger->info("App initialized");
+
+        return app.exec();
+    }
+    //WindowMain w;
+    //w.show();
+
+    //auto t_factory = std::make_unique<TrackerFactory>("./models/");
+
+    //Presenter p((IView&)w, std::move(t_factory), std::move(conf_mgr));
+    //logger->info("App initialized");
+
+    //return app.exec();
 }

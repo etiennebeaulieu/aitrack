@@ -4,9 +4,10 @@
 #include "../version.h"
 #include <iostream>
 #include <QMessageBox>
+#include <QTimer>
 
 
-WindowMain::WindowMain(QWidget *parent)
+WindowMain::WindowMain(bool auto_start, QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
@@ -32,6 +33,9 @@ WindowMain::WindowMain(QWidget *parent)
 	connect(check_video_preview, SIGNAL(released()), this, SLOT(onSaveClick()));
 	
 	statusBar()->setSizeGripEnabled(false);
+
+	if (auto_start)
+		QTimer::singleShot(0, this, &WindowMain::onTrackClick);
 }
 
 WindowMain::~WindowMain()

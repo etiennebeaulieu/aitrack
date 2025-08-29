@@ -21,6 +21,7 @@ ConfigData ConfigData::getGenericConfig()
 	conf.use_landmark_stab = true;
 	conf.autocheck_updates = true;
 	conf.tracking_shortcut_enabled = false;
+	conf.auto_start_enabled = false;
 	conf.x, conf.y, conf.z, conf.pitch, conf.yaw, conf.roll = 0;
 	conf.cam_exposure = -1;
 	conf.cam_gain = -1;
@@ -78,6 +79,7 @@ void ConfigMgr::updateConfig(const ConfigData& data)
 	//conf.setValue("head_3d_scale_y", data.head_scale_y);
 	//conf.setValue("head_3d_scale_z", data.head_scale_z);
 	conf.setValue("tracking_shortcut_enabled", data.tracking_shortcut_enabled);
+	conf.setValue("auto_start_enabled", data.auto_start_enabled);
 
 }
 
@@ -108,6 +110,7 @@ ConfigData ConfigMgr::getConfig()
 	//c.head_scale_y = conf.value("head_3d_scale_y", 1.0).toDouble();
 	//c.head_scale_z = conf.value("head_3d_scale_z", 1.0).toDouble();
 	c.tracking_shortcut_enabled= conf.value("tracking_shortcut_enabled", false).toBool();
+	c.auto_start_enabled = conf.value("auto_start_enabled", false).toBool();
 
 	return c;
 }
