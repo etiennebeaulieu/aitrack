@@ -107,7 +107,7 @@ Qt::KeyboardModifiers QGlobalShortcut::getMods(const QKeySequence& keyseq) {
 
 
 bool QGlobalShortcut::QGlobalShortcutEventFilter::nativeEventFilter(const QByteArray& event_type,
-    void* message, long* result)
+    void* message, qintptr* result)
 {
     MSG* msg = static_cast<MSG*>(message);
     if (msg->message == WM_HOTKEY) {

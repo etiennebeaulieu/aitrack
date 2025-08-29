@@ -25,18 +25,18 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debugg|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
@@ -75,6 +75,9 @@
       <AdditionalIncludeDirectories>$(Qt_INCLUDEPATH_);$(SolutionDir)Dependencies\libusb\include\libusb-1.0;$(SolutionDir)Dependencies\OpenCV\include\;$(ProjectDir)\Vendor\spdlog\include\;$(SolutionDir)Dependencies\onnxruntime\include\;$(SolutionDir)AITracker\src\;$(ProjectDir)Include;$(QTDIR)\include;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtCore;$(QTDIR)\mkspecs\win32-msvc;$(Platform)\$(Configuration)\uic;$(Platform)\$(Configuration)\moc;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>Async</ExceptionHandling>
       <StringPooling>true</StringPooling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/std:c++17 /Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(Qt_LIBPATH_);$(SolutionDir)Dependencies\libusb\MS64\static;$(SolutionDir)Dependencies\OpenCV\lib;$(SolutionDir)Dependencies\spdlog\lib\;$(SolutionDir)Dependencies\onnxruntime\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -89,6 +92,9 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debugg|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>$(Qt_INCLUDEPATH_);$(ProjectDir)Dependencies\OpenCV\include\;$(SolutionDir)Dependencies\libusb\include\libusb-1.0;$(SolutionDir)Dependencies\OpenCV\include\;$(SolutionDir)Dependencies\onnxruntime\include\;$(SolutionDir)AITracker\src\;$(ProjectDir)Include;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/std:c++17 /Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(Qt_LIBPATH_);C:\Users\Alvaro\source\repos\Camera\Dependencies\libusb\MS64\static;C:\Users\Alvaro\source\repos\Camera\Dependencies\OpenCV\lib;$(SolutionDir)Dependencies\onnxruntime\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -110,27 +116,30 @@
       <AdditionalIncludeDirectories>$(Qt_INCLUDEPATH_);$(SolutionDir)Dependencies\libusb\include\libusb-1.0;$(SolutionDir)Dependencies\OpenCV\include\;$(SolutionDir)Dependencies\onnxruntime\include\;$(ProjectDir)Vendor\spdlog\include\;$(SolutionDir)PS3Driver\include\;$(SolutionDir)AITracker\src\;$(ProjectDir)Include;$(QTDIR)\include;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtCore;$(QTDIR)\mkspecs\win32-msvc;$(Platform)\$(Configuration)\uic;$(Platform)\$(Configuration)\moc;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>Async</ExceptionHandling>
       <StringPooling>true</StringPooling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/std:c++17 /Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ProjectReference>
       <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
     </ProjectReference>
   </ItemDefinitionGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
-    <QtInstall>$(DefaultQtVersion)</QtInstall>
+    <QtInstall>C:\Qt\6.9.2\msvc2022_64</QtInstall>
     <QtModules>core;uitools;widgets;quick</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
     <QtLibrarySearchPath>$(QTDIR)\lib;$(QtLibrarySearchPath)</QtLibrarySearchPath>
     <QtHeaderSearchPath>$(QTDIR)\include</QtHeaderSearchPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
-    <QtInstall>$(DefaultQtVersion)</QtInstall>
+    <QtInstall>C:\Qt\6.9.2\msvc2022_64</QtInstall>
     <QtModules>core;uitools;widgets;quick</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
     <QtHeaderSearchPath>$(QTDIR)\include</QtHeaderSearchPath>
     <QtLibrarySearchPath>$(QTDIR)\lib;$(QtLibrarySearchPath)</QtLibrarySearchPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debugg|x64'" Label="QtSettings">
-    <QtInstall>$(DefaultQtVersion)</QtInstall>
+    <QtInstall>C:\Qt\6.9.2\msvc2022_64</QtInstall>
     <QtModules>core;uitools;widgets;quick</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
